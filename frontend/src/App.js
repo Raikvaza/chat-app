@@ -23,9 +23,19 @@ class App extends Component{
   }
 
   send(event) {
-    if (event.keyCode === 13) {
-      sendMsg(event.target.value); // Use the sendMsg function from api/index.js
-      event.target.value = "";  // Erase the contents of an input field
+    if (event.keyCode === 13 || event.keyCode === 2) {
+      if (document.getElementById('input').value !== ""){
+        sendMsg(document.getElementById('input').value); // Use the sendMsg function from api/index.js
+        document.getElementById('input').value = "";  // Erase the contents of an input field
+        return
+      }
+    } 
+  }
+  sendButton(){
+    if (document.getElementById('input').value !== ""){
+      sendMsg(document.getElementById('input').value); // Use the sendMsg function from api/index.js
+      document.getElementById('input').value = "";  // Erase the contents of an input field
+      return
     }
   }
   render(){
@@ -33,7 +43,7 @@ class App extends Component{
       <div className="App">
         <Header/>
         <ChatHistory chatHistory={this.state.chatHistory}/>
-        <ChatInput send={this.send}/>
+        <ChatInput send={this.send} sendButton={this.sendButton}/>
       </div>
     )
   }

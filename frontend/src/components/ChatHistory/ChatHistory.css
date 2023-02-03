@@ -1,0 +1,17 @@
+.chat-history-container{
+    background-color: forestgreen;
+    height: 60vh;
+}
+.chat-history-container > h2{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.chat-history-messages{
+    background-color: aquamarine;
+    height: 90%;
+    padding: 0.5em;
+    overflow: auto;
+    
+}

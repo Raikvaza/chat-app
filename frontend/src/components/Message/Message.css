@@ -6,9 +6,9 @@
     padding: 10px 20px;
     border-radius: 5px;
     clear: both;
-    &.me{
+    /* &.me{
         color: black;
         float: right;
         background-color: yellow;
-    }
+    } */
 }
